@@ -28,3 +28,4 @@ include_directories(include)
 
 # Look in the LessonX subdirectory to find its CMakeLists.txt so we can build the executable
 add_subdirectory(Lesson0)
+add_subdirectory(Lesson1)
