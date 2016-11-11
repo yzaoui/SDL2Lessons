@@ -143,8 +143,11 @@ int main (int argc, char** argv) {
 	int useClip = 0;
 
 	//Screen grid numbers
-	const int xScreenTiles = SCREEN_WIDTH / tileW;
-	const int yScreenTiles = SCREEN_HEIGHT / tileH;
+	//Fill in extra space if screen is not a multiple of tilesize
+	const int xScreenTiles = SCREEN_WIDTH / tileW
+		+ (SCREEN_WIDTH % tileW != 0 ? 1 : 0);
+	const int yScreenTiles = SCREEN_HEIGHT / tileH
+		+ (SCREEN_HEIGHT % tileH != 0 ? 1 : 0);
 	const int totalScreenTiles = xScreenTiles * yScreenTiles;
 
 	/******************************
